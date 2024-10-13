@@ -8,7 +8,7 @@ from __future__ import division
 import time
 import math
 import warnings
-import RPi.GPIO as GPIO
+import ASUS.GPIO as GPIO
 
 
 class Measurement(object):
@@ -21,7 +21,7 @@ class Measurement(object):
     """
 
     def __init__(
-        self, trig_pin, echo_pin, temperature=20, unit="metric", gpio_mode=GPIO.BCM
+        self, trig_pin, echo_pin, temperature=20, unit="metric", gpio_mode=GPIO.ASUS
     ):
         self.trig_pin = trig_pin
         self.echo_pin = echo_pin
