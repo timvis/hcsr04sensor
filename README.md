@@ -1,29 +1,12 @@
-# HC-SR04 Ultrasonic Sensor on Raspberry Pi
+# HC-SR04 Ultrasonic Sensor on ASUS Tinkerboard
 
 [Hcsr04sensor Web Page](https://www.linuxnorth.org/hcsr04sensor)
 
-Calculate distance and depth measurements with an HCSR04 Ultrasonic Sound Sensor and a Raspberry Pi. Instructions assume that you are using Raspbian Linux.
+Calculate distance and depth measurements with an HCSR04 Ultrasonic Sound Sensor and a Raspberry Pi. Instructions assume that you are using the python module ASUS.gpio .
 
 This module also works with the JSN-SR04T waterproof sound sensor.
 
 ![wiring](https://www.linuxnorth.org/raspi-sump/images/raspi-sump-wiring.jpg)
-
-## Python3 Install
-
-Install dependencies;
-
-    sudo apt install python3-pip python3-rpi.gpio
-
-The above installs RPi.GPIO 0.7.0.  If using Raspberry Pi OS (Bullseye) you may prefer to install RPi.GPIO 0.7.1 with Pip. Either one should work.
-
- To get the latest install it with Pip as follows;
-
-    sudo apt remove python3-rpi.gpio  <--0.7.0
-    sudo pip3 install RPi.GPIO <--0.7.1
-
-Install the hcsr04sensor module
-
-    sudo pip3 install hcsr04sensor
 
 ## Description
 
@@ -48,9 +31,9 @@ The module does the following;
   reduced further.  CPU usage increases as faster readings are taken as well as
   the chance for errors.
 
-  This module uses BCM pin values.  See the Raspberry Pi pin layout documentation for your model.
+  This module uses ASUS pin values.  See the ASUS Tinkerboard pin layout documentation for your model.
 
-* Uses BCM pin values by default.  BOARD pin values are supported.
+* Uses ASUS pin values by default.  BOARD pin values are supported.
 
 * Adjusts the reading based on temperature by adjusting the speed of sound.
 
@@ -64,7 +47,7 @@ The module does the following;
 
 ## Accuracy of Readings
 
-If you need highly accurate readings then this module would not be suitable for your project.  In that case you should probably use an Arduino instead of a Raspberry Pi.
+If you need highly accurate readings then this module would not be suitable for your project.  In that case you should probably use an Arduino instead of a Raspberry Pi type.
 
 Linux is not a Real Time OS so you can expect to get a small variance on each reading, usually within a half cm of the actual value.  I say "usually" because every once in a while you can get a reading that is way out of range.  This is due to the OS executing other tasks before getting your distance reading.  It is why I use a sample of readings.  I can always trust that the median of my sample of 11 readings is good.
 
@@ -84,7 +67,7 @@ This module is not suitable for long distances.
 
 See example scripts in https://github.com/alaudet/hcsr04sensor/tree/master/recipes
 
-Access to Raspberry Pi GPIO pins requires the user account to be in the Linux gpio group.
+Access to Tinkerboard GPIO pins requires the user account to be in the Linux gpio group.
 
 To add your user account name to the gpio group;
 
